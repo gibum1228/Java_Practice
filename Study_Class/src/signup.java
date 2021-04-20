@@ -14,7 +14,7 @@ public class signup {
 				+ "= 2.회원가입\n"
 				+ "= 3.종료";
 		
-		while(op != 4) {
+		while(op != 3) {
 			System.out.println(sInfo);
 			op = sc.nextInt();
 			
@@ -43,8 +43,6 @@ public class signup {
 					
 					break;
 				case 3:
-					System.out.println("힝 속았징 ?\n");
-					
 					break;
 			}
 		}
@@ -59,7 +57,9 @@ interface User {
 	String userId = null;
 	String password = null;
 
-	boolean login(String id, String pwd);
+	public static boolean login(String id, String pwd) {
+		return false;
+	};
 	void info();
 }
 // 추상 클래스 버전
@@ -76,7 +76,7 @@ interface Admin extends User {
 	String authority = "admin";
 }
 
-// 인터페이스 상속 -> implements 사용
+// 추상 클래스
 class Student extends ABSUser {
 	// 필드
 	String snum;
