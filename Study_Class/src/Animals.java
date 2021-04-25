@@ -3,6 +3,7 @@ public class Animals {
 	public static void main(String[] args) {
 		// 클래스 객체
 		Dog a;
+		// a = new Dog(); // Error 
 		a = new Dog("강아지", "왈왈", "인절미", 3);
 		Animal a2 = new Animal();
 		
@@ -27,6 +28,7 @@ public class Animals {
 
 class Animal {	
 	// 필드
+	// 필드 멤버
 	protected String kind; // 대분류
 	private String speak; // 짖는 소리
 	
@@ -39,7 +41,7 @@ class Animal {
 		this.speak = speak;
 	}
 	
-	// 메소드
+	// 필드 메소드
 	// 짖기
 	void speak() {
 		System.out.println(speak);
@@ -56,14 +58,14 @@ class Dog extends Animal {
 	
 	// 생성자
 	public Dog() {
-		this("멍멍이", 1); // this() 사용
+		this("멍멍이", 1); // this() 사용 -> Dog(name, age);
 	}
 	public Dog(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
 	public Dog(String kind, String speak, String name, int age) {
-		super(kind, speak); // 부모 생성자 호
+		super(kind, speak); // 부모 생성자 호출
 		this.name = name;
 		this.age = age;
 	}
